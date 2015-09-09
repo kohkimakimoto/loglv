@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	// Init replaces output of Go standard log package.
+	// At first, You should run Init method that replaces output of Go standard log package.
 	loglv.Init()
 
 	log.Println("standard log message. this is outputted!")
