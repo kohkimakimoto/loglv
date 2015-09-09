@@ -12,7 +12,7 @@ Use `go get` command.
 $ go get github.com/kohkimakimoto/loglv
 ```
 
-## Example
+## Usage
 
 ```go
 package main
@@ -24,7 +24,7 @@ import (
 )
 
 func main() {
-	// Init replaces output of Go standard log package.
+	// At first, You should run Init method that replaces output of Go standard log package.
 	loglv.Init()
 
 	log.Println("standard log message. this is outputted!")
@@ -44,3 +44,11 @@ func main() {
 	log.Println("standard log message. but this is not outputted, because log level is quiet!")
 }
 ```
+
+## Author
+
+Kohki Makimoto <kohki.makimoto@gmail.com>
+
+## License
+
+MIT license.
