@@ -1,5 +1,7 @@
 # loglv
 
+[![Build Status](https://travis-ci.org/kohkimakimoto/loglv.svg)](https://travis-ci.org/kohkimakimoto/loglv)
+
 A package supports leveled logging for Go standard `log` package.
 
 ## Installation
