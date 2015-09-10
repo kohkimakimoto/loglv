@@ -20,6 +20,8 @@ const (
 	LvQuiet = 0
 )
 
+var inited = false
+
 type leveledWriter struct {
 	lv  int
 	out io.Writer
@@ -85,26 +87,36 @@ func SetOutput(w io.Writer) {
 	writer.out = w
 }
 
+// IsDebug returns true value if the level is debug.
 func IsDebug() bool {
 	return writer.lv >= LvDebug
 }
 
+// IsInfo returns true value if the level is info.
 func IsInfo() bool {
 	return writer.lv >= LvInfo
 }
 
+// IsWarning returns true value if the level is warning.
 func IsWarning() bool {
 	return writer.lv >= LvWarning
 }
 
+// IsError returns true value if the level is error.
 func IsError() bool {
 	return writer.lv >= LvError
 }
 
+// IsQuiet returns true value if the level is quiet.
 func IsQuiet() bool {
 	return writer.lv >= LvQuiet
 }
 
+// Init initializes logger output.
 func Init() {
+	if inited {
+		return
+	}
 	log.SetOutput(writer)
+	inited = true
 }
