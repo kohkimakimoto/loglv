@@ -64,6 +64,11 @@ func SetLv(level int) {
 	writer.lv = level
 }
 
+// Writer returns a leveled log writer.
+func Writer() io.Writer {
+	return writer
+}
+
 // SetLevelByString sets a log level by string.
 func SetLevelByString(lv string) error {
 	if lv == "debug" {
