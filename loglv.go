@@ -64,6 +64,16 @@ func SetLv(level int) {
 	writer.lv = level
 }
 
+// Lv returns log level
+func Lv() int {
+	return writer.lv
+}
+
+// Lv returns log level string
+func LvString() string {
+	return writer.LvToString()
+}
+
 // Writer returns a leveled log writer.
 func Writer() io.Writer {
 	return writer
